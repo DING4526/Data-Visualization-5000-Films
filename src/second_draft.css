@@ -1,0 +1,327 @@
+body {
+    margin: 0;
+    background-color: #f3f3f3;
+    /* 浅灰色背景 */
+}
+
+#chart-container {
+    background-color: #ffffff;
+    /* 浅灰色背景 */
+}
+
+.bubbles {
+    stroke-width: 1px;
+    stroke: black;
+    opacity: 0.8
+}
+
+.bubbles:hover {
+    stroke-width: 0.6px;
+    stroke: rgba(253, 255, 148, 0.8);
+    opacity: 1;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+    /* 避免 tooltip 拦截鼠标事件 */
+    max-width: 400px;
+    /* 限制宽度 */
+    word-wrap: break-word;
+    /* 文本自动换行 */
+    transform-origin: center;
+    /* 设置变换原点为中心 */
+    transform: translate(-50%, -50%);
+    /* 调整为自身中心为基点 */
+}
+
+.gridline line {
+    stroke: #cbcbcb;
+    /* 网格线颜色 */
+    stroke-dasharray: 2 2;
+    /* 虚线样式 */
+    opacity: 0.7;
+    /* 透明度 */
+}
+
+.axis_text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    fill: #555555;
+}
+
+.axis_title {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* 设置字体，简洁现代 */
+    font-size: 19px;
+    /* 字体大小，适中 */
+    font-weight: bold;
+    /* 字体加粗，突出显示 */
+    fill: #333333;
+    /* 文本颜色，深灰色，易读 */
+    letter-spacing: 0.2px;
+    /* 字母间距，增加清晰度 */
+}
+
+.title {
+    font-family: 'Pacifico', cursive;
+    font-size: 32px;
+    fill: #100815;
+    /* 紫色 */
+    stroke: #939292;
+    /* 黑色描边 */
+    stroke-width: 1px;
+    text-anchor: middle;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    fill: #333333;
+    /* 深灰色 */
+    text-anchor: middle;
+}
+
+.year-label {
+    font-size: 150px;
+    /* 大字体 */
+    font-weight: bold;
+    /* 粗体 */
+    fill: #b3b2b2;
+    /* 浅灰色，适合半透明效果 */
+    opacity: 0.5;
+    /* 半透明 */
+    text-anchor: left;
+    /* 居中对齐 */
+    pointer-events: none;
+}
+
+.legend-Genres-hover circle {
+    stroke: rgb(251, 255, 169);
+    stroke-width: 0.5px;
+    /* 给文本添加黑色边框 */
+    filter: drop-shadow(2px 2px 3.5px rgba(0, 0, 0, 0.7));
+    /* 添加阴影效果 */
+    transform: scale(1.3);
+    /* 放大 1.2 倍 */
+    transition: all 0.2s ease;
+    /* 平滑过渡 */
+}
+
+.legend-Genres-hover text {
+    stroke: black;
+    /* 给文本添加黑色边框 */
+    font-weight: 700;
+    stroke-width: 0.7px;
+    /* 边框宽度 */
+    transform: scale(1.3);
+    /* 放大 1.2 倍 */
+    transition: all 0.2s ease;
+    /* 平滑过渡 */
+}
+
+.bubbles.dot-selected {
+    stroke-width: 1.2px;
+    stroke: rgba(253, 255, 148, 0.9);
+    opacity: 1;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.8));
+}
+
+.slider-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    width: fit-content;
+    /* 根据内容自适应宽度 */
+    margin-top: 20px;
+    /* 距离图表的间距 */
+}
+
+#y-max-slider-container,
+#x-max-slider-container {
+    flex-direction: column;
+    /* 子元素垂直排列 */
+    align-items: start;
+    /* 子元素靠右对齐 */
+    gap: 5px;
+    /* 子元素之间的间距 */
+}
+
+.slider {
+    width: 100%;
+    /* 让滑块占满容器宽度 */
+    margin: 0 10px;
+    /* 两侧留白 */
+}
+
+#y-max-display,
+#x-max-display {
+    align-self: flex-end;
+}
+
+#max-r-button-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    /* 水平居中对齐 */
+    align-items: center;
+    /* 垂直居中对齐 */
+    width: fit-content;
+    /* 根据内容自适应宽度 */
+    margin-top: 100px;
+    /* 距离图表的间距 */
+}
+
+#jump-button-container {
+    text-align: center;
+}
+
+#max-r-button-container {
+    display: flex;
+    gap: 20px;
+    /* 按钮之间的间距 */
+}
+
+button.round-button {
+    background: #5e9714;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.round-button:hover {
+    background: #27ae60;
+    transform: scale(1.1);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+button.round-button:active {
+    background: #1e8449;
+    transform: scale(0.9);
+    box-shadow: none;
+}
+
+
+button.border-button {
+    background: none;
+    border: 3px solid #9b59b6;
+    color: #9b59b6;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.border-button:hover {
+    background: #9b59b6;
+    color: rgb(237, 237, 237);
+}
+
+button.border-button:active {
+    background: #4f0544;
+    transform: scale(0.85);
+    box-shadow: rgba(0, 0, 0, 0.9);
+}
+
+#navigate-button {
+    background: none;
+    border: 3px solid #606060;
+    color: #616161;
+}
+
+#navigate-button:hover {
+    background: #6a6a6a;
+    color: rgb(237, 237, 237);
+}
+
+#navigate-button:active {
+    background: #2e2e2e;
+    transform: scale(0.85);
+    box-shadow: rgba(0, 0, 0, 0.9);
+}
+
+
+#bar-chart-controls {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    /* 左对齐下拉框和标签 */
+    padding: 10px;
+    background-color: #f9f9f9;
+    /* 添加浅灰色背景 */
+    border: 1px solid #ccc;
+    /* 边框颜色 */
+    border-radius: 8px;
+    /* 圆角边框 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* 添加阴影 */
+    font-family: Arial, sans-serif;
+    /* 设置字体 */
+    position: absolute;
+}
+
+#bar-chart-controls label {
+    font-size: 14px;
+    /* 标签字体大小 */
+    font-weight: bold;
+    /* 标签加粗 */
+    margin-right: 8px;
+    /* 标签和下拉框之间的间距 */
+    color: #333;
+    /* 字体颜色 */
+}
+
+#data-type-select {
+    padding: 4px 10px;
+    /* 内边距增加点击区域 */
+    font-size: 14px;
+    /* 下拉框字体大小 */
+    border: 1px solid #ccc;
+    /* 边框颜色 */
+    border-radius: 5px;
+    /* 圆角 */
+    background-color: white;
+    /* 背景色 */
+    color: #333;
+    /* 字体颜色 */
+    cursor: pointer;
+    /* 鼠标样式为指针 */
+    transition: all 0.3s ease;
+    /* 添加过渡效果 */
+}
+
+#data-type-select:hover {
+    border-color: #888;
+    /* 鼠标悬停时的边框颜色 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* 鼠标悬停时的阴影 */
+}
+
+#data-type-select:focus {
+    outline: none;
+    /* 去除默认聚焦样式 */
+    border-color: #555;
+    /* 聚焦时的边框颜色 */
+    box-shadow: 0 0 3px #888;
+    /* 聚焦时的阴影 */
+}

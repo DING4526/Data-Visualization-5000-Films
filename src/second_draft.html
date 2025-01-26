@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- Load d3.js -->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <!-- Load color scale -->
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <link rel="stylesheet" href="second_draft.css">
+</head>
+
+<body>
+    <!-- Create a div where the graph will take place -->
+    <div id="main-container"></div>
+
+    <div class="slider-container" id="time-slider-container">
+        <label for="time-slider">Select Date:</label>
+        <input type="range" class="slider" id="time-slider">
+        <span id="time-display"></span>
+    </div>
+
+    <div class="slider-container" id="y-max-slider-container">
+        <input type="range" class="slider" id="y-max-slider">
+        <span id="y-max-display"></span>
+    </div>
+
+    <div class="slider-container" id="x-max-slider-container">
+        <input type="range" class="slider" id="x-max-slider">
+        <span id="x-max-display"></span>
+    </div>
+
+    <div id="jump-button-container" style="display: none; margin: 10px;">
+        <button id="jump-button" style="padding: 10px 15px; font-size: 16px;">View on Douban</button>
+    </div>
+
+    <div id="bar-chart-controls" style="margin: 10px; position: absolute;">
+        <label for="data-type-select">Data Type: </label>
+        <select id="data-type-select"></select>
+    </div>
+
+
+    <script src="second_draft.js">
+
+    </script>
+</body>
+
+</html>

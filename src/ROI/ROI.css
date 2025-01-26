@@ -1,0 +1,126 @@
+body {
+    background-color: whitesmoke;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    pointer-events: none;
+    font-size: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.legend {
+    font-size: 12px;
+}
+
+.axis-label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.grid line {
+    stroke: lightgrey;
+    stroke-opacity: 0.7;
+    shape-rendering: crispEdges;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+.density-path {
+    fill: rgba(169, 169, 169, 0.3);
+    stroke: #666;
+    stroke-width: 1px;
+    stroke-linejoin: round;
+}
+
+.distribution-line {
+    fill: none;
+    stroke: #666;
+    stroke-width: 1.5px;
+    stroke-dasharray: 5, 5;
+}
+
+.threshold-line {
+    stroke: rgba(255, 0, 0, 0.3);
+    stroke-width: 1;
+    stroke-dasharray: 5, 5;
+}
+
+.annotation {
+    font-size: 12px;
+    fill: #666;
+}
+
+.quartile-line {
+    pointer-events: none;
+}
+
+.quartile-area {
+    pointer-events: none;
+}
+
+.trend-chart-container {
+    pointer-events: all;
+}
+
+.trend-tooltip {
+    font-size: 12px;
+    pointer-events: none;
+}
+
+.trend-point {
+    cursor: pointer;
+}
+
+#chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* added button */
+button.border-button {
+    background: none;
+    border: 3px solid #9b59b6;
+    color: #9b59b6;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button.border-button:hover {
+    background: #9b59b6;
+    color: rgb(237, 237, 237);
+}
+
+button.border-button:active {
+    background: #4f0544;
+    transform: scale(0.85);
+    box-shadow: rgba(0, 0, 0, 0.9);
+}
+
+#navigate-button {
+    background: none;
+    border: 3px solid #606060;
+    color: #616161;
+}
+
+#navigate-button:hover {
+    background: #6a6a6a;
+    color: rgb(237, 237, 237);
+}
+
+#navigate-button:active {
+    background: #2e2e2e;
+    transform: scale(0.85);
+    box-shadow: rgba(0, 0, 0, 0.9);
+}
